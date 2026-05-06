@@ -17,10 +17,7 @@ public class Calculator<T> {
     }
 
     public void printX(User us) {
-        Map
     }
     //
-
-    Collection
 
 }
