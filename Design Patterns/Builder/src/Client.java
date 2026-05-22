@@ -9,13 +9,10 @@ public class Client {
 //        map.put("psp","kajff");
 //
 //        Student s = new Student(map);
-        Builder builder = Student.getBuilder()
+        Student student = Student.getBuilder()
                 .setName("Virat")
                 .setGradYear(2023)
-                .setMobNo(32894938);
-
-        Student s = new Student(builder);
-
-
+                .setMobNo(32894938)
+                .build();
     }
 }

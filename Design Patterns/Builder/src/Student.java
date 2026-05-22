@@ -28,11 +28,85 @@ public class Student {
         return new Builder();
     }
 
-    public Student(Builder builder) {
-        if(builder.getGradYear() < 2022) {
-            throw  new RuntimeException();
-        }
+    private Student(Builder builder) {
         this.name = builder.getName();
         this.psp = builder.getPsp();
     }
+
+    static class Builder {
+
+        private String name;
+        private double psp;
+        private String batch;
+        private int gradYear;
+        private int mobNo;
+        private String email;
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setPsp(double psp) {
+            this.psp = psp;
+            return this;
+        }
+
+        public void setBatch(String batch) {
+            this.batch = batch;
+        }
+
+        public Builder setGradYear(int gradYear) {
+            this.gradYear = gradYear;
+            return this;
+        }
+
+        public Builder setMobNo(int mobNo) {
+
+            this.mobNo = mobNo;
+            return this;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getPsp() {
+            return psp;
+        }
+
+        public String getBatch() {
+            return batch;
+        }
+
+        public int getGradYear() {
+            return gradYear;
+        }
+
+        public int getMobNo() {
+            return mobNo;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void validate() {
+            if(this.getGradYear() < 2022) {
+                throw  new RuntimeException();
+            }
+            // val 3
+            // val 4
+        }
+
+        public Student build() {
+            validate();
+            return new Student(this);
+        }
+    }
+
 }
