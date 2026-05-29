@@ -20,5 +20,7 @@ public class Client {
         Student rattandeep = studentRegistry.getStudent("sep25Student");
         rattandeep.setName("Rattandeep");
         rattandeep.setPsp(95.0);
+
+        System.out.println("DEBUG");
     }
 }
