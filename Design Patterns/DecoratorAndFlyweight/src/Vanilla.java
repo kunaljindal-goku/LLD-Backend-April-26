@@ -1,11 +1,17 @@
-public class Vanilla implements Topping{
-    @Override
-    public int getCost() {
-        return 90;
+public class Vanilla extends ScoopDecorator{
+
+    public Vanilla(IceCream iceCream) {
+        super(iceCream);
     }
 
     @Override
-    public String getDescription() {
-        return "Vanilla";
+    public int getCost() {
+        return iceCream.getCost() + 80;
+    }
+
+    @Override
+    public void getDescription() {
+        iceCream.getDescription();
+        System.out.println("Vanilla");
     }
 }

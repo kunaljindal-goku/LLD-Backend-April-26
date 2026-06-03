@@ -1,11 +1,11 @@
-public class WaffleCone implements Cone{
+public class WaffleCone implements IceCream{
     @Override
     public int getCost() {
-        return 70;
+        return 30;
     }
 
     @Override
-    public String getDescription() {
-        return "Waffle Cone";
+    public void getDescription() {
+        System.out.println("Waffle Cone");
     }
 }

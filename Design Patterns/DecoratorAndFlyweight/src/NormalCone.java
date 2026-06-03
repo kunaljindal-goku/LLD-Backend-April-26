@@ -1,11 +1,11 @@
-public class NormalCone implements Cone{
+public class NormalCone implements IceCream{
     @Override
     public int getCost() {
-        return 0;
+        return 20;
     }
 
     @Override
-    public String getDescription() {
-        return "Normal Cone";
+    public void getDescription() {
+        System.out.println("Normal Cone");
     }
 }
