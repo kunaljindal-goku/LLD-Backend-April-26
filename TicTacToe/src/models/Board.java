@@ -37,4 +37,13 @@ public class Board {
             }
         }
     }
+
+    public void display() {
+        for(int i=0;i<size;i++) {
+            for(int j=0;j<size;j++) {
+                this.cells.get(i).get(j).display();
+            }
+            System.out.println();
+        }
+    }
 }

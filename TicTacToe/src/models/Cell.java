@@ -15,6 +15,15 @@ public class Cell {
         this.cellState = CellState.EMPTY;
     }
 
+    public void display() {
+        if(this.cellState.equals(CellState.EMPTY)) {
+            System.out.print("| |");
+        }
+        else {
+            System.out.print("| "+this.player.getSymbol().getName()+" |");
+        }
+    }
+
     public int getRow() {
         return row;
     }

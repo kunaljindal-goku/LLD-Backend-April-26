@@ -17,7 +17,7 @@ public class Bot extends Player{
                BotPlayingStrategy playingStrategy) {
         super(id, name, symbol, playerType);
         this.botDifficulty = botDifficulty;
-        this.playingStrategy = playingStrategy;
+        this.playingStrategy = BotPlayingStrategyFactory.getPlayingStrategy(botDifficulty);
     }
 
     public BotDifficulty getBotDifficulty() {
