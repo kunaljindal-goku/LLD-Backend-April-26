@@ -14,6 +14,9 @@ public class RowWinningStrategy implements WinningStrategy{
     public RowWinningStrategy(int size) {
         this.size = size;
         this.rowMaps = new HashMap[size];
+        for(int i=0;i<size;i++) {
+            rowMaps[i] = new HashMap<>();
+        }
     }
 
     @Override
@@ -25,7 +28,7 @@ public class RowWinningStrategy implements WinningStrategy{
 
         HashMap<String,Integer> currRowMap = rowMaps[currRow];
 
-        String currSymbol = move.getPlayer().getSymbol().getName();
+        String currSymbol = currPlayer.getSymbol().getName();
 
         if(!currRowMap.containsKey(currSymbol)) {
             currRowMap.put(currSymbol,0);

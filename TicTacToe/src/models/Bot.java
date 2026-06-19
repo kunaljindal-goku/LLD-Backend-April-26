@@ -12,10 +12,8 @@ public class Bot extends Player{
     public Bot(int id,
                String name,
                Symbol symbol,
-               PlayerType playerType,
-               BotDifficulty botDifficulty,
-               BotPlayingStrategy playingStrategy) {
-        super(id, name, symbol, playerType);
+               BotDifficulty botDifficulty) {
+        super(id, name, symbol, PlayerType.BOT);
         this.botDifficulty = botDifficulty;
         this.playingStrategy = BotPlayingStrategyFactory.getPlayingStrategy(botDifficulty);
     }
@@ -34,5 +32,13 @@ public class Bot extends Player{
 
     public void setPlayingStrategy(BotPlayingStrategy playingStrategy) {
         this.playingStrategy = playingStrategy;
+    }
+
+    @Override
+    public Move makeMove(Game game) {
+        System.out.println("It's "+this.getName()+" bot's turn");
+        Move move = playingStrategy.makeMove(game.getBoard());
+        move.setPlayer(this);
+        return move;
     }
 }

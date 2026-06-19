@@ -1,7 +1,8 @@
 import controller.GameController;
-import models.Game;
-import models.Player;
+import models.*;
+import models.enums.BotDifficulty;
 import models.enums.GameState;
+import strategy.RowWinningStrategy;
 import strategy.WinningStrategy;
 
 import java.util.ArrayList;
@@ -11,29 +12,30 @@ public class Client {
 
     public static void main(String[] args) {
 
-        int size = 4;
+        int size = 3;
         List<Player> players = new ArrayList<>();
-        List<WinningStrategy> winningStrategies = new ArrayList<>();
+        players.add(new Human(1,"Yogesh",new Symbol("X","X"),20));
+        players.add(new Bot(2,"Goku",new Symbol("O","O"), BotDifficulty.EASY));
+       // players.add(new Human(3,"Vegeta",new Symbol("C","C"),7));
+        List<WinningStrategy> winningStrategies = List.of(new RowWinningStrategy(size));
 
         GameController gameController = new GameController();
         Game game = gameController.startGame(size,players,winningStrategies);
-        gameController.display(game);
 
         // play
         while(gameController.getGameState(game).equals(GameState.IN_PROGRESS)) {
-            //input
-            // makeMove
-            // checkWinner
-            // if winner update gamestate -> COMPLETED
-            // keep on playing
+            gameController.display(game);
+            gameController.makeMove(game);
         }
+
+        gameController.display(game);
 
       if(gameController.getGameState(game).equals(GameState.DRAW)) {
           System.out.println("Game DRAWN");
       }
       else {
           // winning
-          System.out.println("PLayer has won");
+          System.out.println("PLayer" +game.getWinner().getName()+ " has won");
       }
     }
 }
