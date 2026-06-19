@@ -1,5 +1,6 @@
 package strategy;
 
+import models.Board;
 import models.Move;
 import models.Player;
 import models.Symbol;
@@ -8,19 +9,17 @@ import java.util.HashMap;
 
 public class RowWinningStrategy implements WinningStrategy{
 
-    private int size;
     private HashMap<String, Integer> rowMaps[];
 
-    public RowWinningStrategy(int size) {
-        this.size = size;
-        this.rowMaps = new HashMap[size];
-        for(int i=0;i<size;i++) {
+    public RowWinningStrategy() {
+        this.rowMaps = new HashMap[10000];
+        for(int i=0;i<10000;i++) {
             rowMaps[i] = new HashMap<>();
         }
     }
 
     @Override
-    public boolean checkWinner(Move move) {
+    public boolean checkWinner(Board board, Move move) {
         // step 1: current player
         Player currPlayer = move.getPlayer();
         // get current row
@@ -35,6 +34,6 @@ public class RowWinningStrategy implements WinningStrategy{
         }
         currRowMap.put(currSymbol,currRowMap.get(currSymbol)+1);
 
-        return currRowMap.get(currSymbol)==size;
+        return currRowMap.get(currSymbol)==board.getSize();
     }
 }

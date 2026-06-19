@@ -113,7 +113,7 @@ public class Game {
 
     private boolean checkWinner(Move move) {
         for(WinningStrategy winningStrategy: winningStrategies) {
-            if(winningStrategy.checkWinner(move)) {
+            if(winningStrategy.checkWinner(this.board,move)) {
                 return true;
             }
         }
@@ -155,8 +155,6 @@ public class Game {
             this.winningStrategies = winningStrategies;
             return this;
         }
-
-
 
         public Game build() {
             validateNumberOfPlayers();

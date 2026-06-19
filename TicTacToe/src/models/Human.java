@@ -21,6 +21,13 @@ public class Human extends Player {
         System.out.println("Please enter row and column to make a move");
         int row = scanner.nextInt();
         int col = scanner.nextInt();
+        validateMove(row,col);
         return new Move(this,new Cell(row,col));
+    }
+
+    private void validateMove(int row, int col) {
+        // FILLED
+        // OUT OF BOUNDS OF GRID
+        // TODO
     }
 }
