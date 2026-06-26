@@ -1,5 +1,8 @@
 package model;
 
+import strategy.PricingStrategy;
+import strategy.SlotAllocationStrategy;
+
 import java.util.List;
 
 public class ParkingLot extends BaseEntity{
@@ -12,8 +15,9 @@ public class ParkingLot extends BaseEntity{
 
     private ParkingLotStatus parkingLotStatus;
 
-    // pricing strategy
-    // allocation strategy
+    private PricingStrategy pricingStrategy;
+
+    private SlotAllocationStrategy slotAllocationStrategy;
 
 
     public String getAddress() {
@@ -46,5 +50,21 @@ public class ParkingLot extends BaseEntity{
 
     public void setParkingLotStatus(ParkingLotStatus parkingLotStatus) {
         this.parkingLotStatus = parkingLotStatus;
+    }
+
+    public PricingStrategy getPricingStrategy() {
+        return pricingStrategy;
+    }
+
+    public void setPricingStrategy(PricingStrategy pricingStrategy) {
+        this.pricingStrategy = pricingStrategy;
+    }
+
+    public SlotAllocationStrategy getSlotAllocationStrategy() {
+        return slotAllocationStrategy;
+    }
+
+    public void setSlotAllocationStrategy(SlotAllocationStrategy slotAllocationStrategy) {
+        this.slotAllocationStrategy = slotAllocationStrategy;
     }
 }

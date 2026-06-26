@@ -1,6 +1,8 @@
-package model;
+package dto.request;
 
-public class Vehicle extends BaseEntity{
+import model.VehicleType;
+
+public class IssueTokenRequest {
 
     private String ownerName;
 
@@ -8,10 +10,16 @@ public class Vehicle extends BaseEntity{
 
     private VehicleType vehicleType;
 
-    public Vehicle(String ownerName, String vehicleNumber, VehicleType vehicleType) {
+    private int gateId;
+
+    private int parkingLotId;
+
+    public IssueTokenRequest(String ownerName, String vehicleNumber, VehicleType vehicleType, int gateId, int parkingLotId) {
         this.ownerName = ownerName;
         this.vehicleNumber = vehicleNumber;
         this.vehicleType = vehicleType;
+        this.gateId = gateId;
+        this.parkingLotId = parkingLotId;
     }
 
     public String getOwnerName() {
@@ -36,5 +44,21 @@ public class Vehicle extends BaseEntity{
 
     public void setVehicleType(VehicleType vehicleType) {
         this.vehicleType = vehicleType;
+    }
+
+    public int getGateId() {
+        return gateId;
+    }
+
+    public void setGateId(int gateId) {
+        this.gateId = gateId;
+    }
+
+    public int getParkingLotId() {
+        return parkingLotId;
+    }
+
+    public void setParkingLotId(int parkingLotId) {
+        this.parkingLotId = parkingLotId;
     }
 }
