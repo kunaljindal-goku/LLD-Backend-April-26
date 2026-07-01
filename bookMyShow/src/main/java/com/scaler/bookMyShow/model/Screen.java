@@ -1,4 +1,11 @@
 package com.scaler.bookMyShow.model;
 
-public class Screen {
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class Screen extends BaseEntity{
 }

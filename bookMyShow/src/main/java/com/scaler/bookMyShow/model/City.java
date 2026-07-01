@@ -1,10 +1,12 @@
 package com.scaler.bookMyShow.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.AbstractCollection;
 import java.util.List;
 
 @Entity
@@ -14,7 +16,7 @@ public class City extends BaseEntity{
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "city")
     private List<Theatre> theatres;
 
 }
