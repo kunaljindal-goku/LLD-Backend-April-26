@@ -1,11 +1,25 @@
 package com.scaler.bookMyShow.model;
 
-import jakarta.persistence.Entity;
+import com.scaler.bookMyShow.model.enums.Feature;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
 public class Screen extends BaseEntity{
+
+    private String name;
+
+    @ManyToOne
+    private Theatre theatre;
+
+    @OneToMany
+    private List<Seat> seats;
+
+    @Enumerated(EnumType.STRING)
+    private List<Feature> features;
 }

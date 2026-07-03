@@ -1,8 +1,12 @@
 package com.scaler.bookMyShow.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Theatre extends BaseEntity{
 
     private String name;
