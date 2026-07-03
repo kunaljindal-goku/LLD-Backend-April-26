@@ -30,7 +30,7 @@ public class Show extends BaseEntity{
 
     private Date endTime;
 
-    @OneToMany
+    @OneToMany(mappedBy = "show")
     private List<ShowSeat> seats;
 
     @OneToMany(mappedBy = "show")

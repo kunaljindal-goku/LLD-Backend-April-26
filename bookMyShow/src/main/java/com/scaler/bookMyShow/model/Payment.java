@@ -1,6 +1,8 @@
 package com.scaler.bookMyShow.model;
 
 import com.scaler.bookMyShow.model.enums.PaymentGateway;
+import com.scaler.bookMyShow.model.enums.PaymentMode;
+import com.scaler.bookMyShow.model.enums.PaymentStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

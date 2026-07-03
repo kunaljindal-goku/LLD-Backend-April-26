@@ -21,5 +21,6 @@ public class Screen extends BaseEntity{
     private List<Seat> seats;
 
     @Enumerated(EnumType.STRING)
+    @ElementCollection
     private List<Feature> features;
 }
