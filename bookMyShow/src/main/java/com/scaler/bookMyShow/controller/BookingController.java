@@ -32,7 +32,7 @@ public class BookingController {
         }
         catch (Exception e) {
             response.setStatus(ResponseStatus.FAILED);
-            response.setMessage("Booking request failed.");
+            response.setMessage("Booking request failed."+e.getMessage());
         }
 
         return response;
