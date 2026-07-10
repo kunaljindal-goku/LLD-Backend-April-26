@@ -18,16 +18,19 @@ public class Booking extends BaseEntity{
     private User user;
 
     @OneToMany
+    @JoinColumn
     private List<ShowSeat> showSeats;
 
     private Date bookingDate;
 
     @OneToMany
+    @JoinColumn
     private List<Payment> payments;
 
     private int amount;
 
     @ManyToOne
+    @JoinColumn
     private Show show;
 
     @Enumerated(value = EnumType.STRING)

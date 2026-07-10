@@ -1,9 +1,6 @@
 package com.scaler.bookMyShow.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +11,7 @@ import java.util.Scanner;
 @Getter
 @Setter
 @Entity
+@Table(name = "shows")
 public class Show extends BaseEntity{
 
     @ManyToOne
@@ -21,9 +19,11 @@ public class Show extends BaseEntity{
     private Screen screen;
 
     @ManyToOne
+    @JoinColumn
     private Movie movie;
 
     @ManyToOne
+    @JoinColumn
     private Theatre theatre;
 
     private Date startTime;

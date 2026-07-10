@@ -18,6 +18,7 @@ public class Screen extends BaseEntity{
     private Theatre theatre;
 
     @OneToMany
+    @JoinColumn
     private List<Seat> seats;
 
     @Enumerated(EnumType.STRING)
