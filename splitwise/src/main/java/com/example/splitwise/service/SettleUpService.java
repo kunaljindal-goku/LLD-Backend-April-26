@@ -20,10 +20,9 @@ public class SettleUpService {
     private final GroupRepository groupRepository;
     private final SettleUpStrategy settleUpStrategy;
 
-    public SettleUpService(GroupRepository groupRepository,
-                           String settleUpStrategy) {
+    public SettleUpService(GroupRepository groupRepository) {
         this.groupRepository = groupRepository;
-        this.settleUpStrategy = SettleUpStrategyFactory.getSettleUpStrategy(settleUpStrategy);
+        this.settleUpStrategy = SettleUpStrategyFactory.getSettleUpStrategy("heap");
     }
 
     public List<Transaction> settleUpGroup(int groupId) {

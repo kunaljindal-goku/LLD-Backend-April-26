@@ -37,7 +37,7 @@ public class SettleUpController {
         }
         catch (Exception e) {
             response.setStatus(ResponseStatus.FAILED);
-            response.setMessage("Transaction generation failed");
+            response.setMessage(e.getMessage());
         }
         return response;
     }
