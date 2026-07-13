@@ -1,5 +1,8 @@
 package com.example.splitwise.commands;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RegisterCommand implements Command{
     @Override
     public boolean matches(String input) {
